@@ -19,7 +19,6 @@ EduManage is a **Django-based college management system** that allows you to man
 ### 🎨 UI & UX
 - Fully **responsive design** using CSS Flexbox
 - Consistent color theme and hover effects
-- **Badges** for courses in student cards
 - Neatly aligned checkboxes in forms
 
 ---
