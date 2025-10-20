@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to College System</h1>
+        <div class="card-container">
+            <div class="card">
+                <h2>Students</h2>
+                <div class="actions">
+                    <a href="/student/add/"><button>Add</button></a>
+                    <a href="/student/view/"><button>View</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Courses</h2>
+                <div class="actions">
+                    <a href="/course/add/"><button>Add</button></a>
+                    <a href="/course/view/"><button>View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

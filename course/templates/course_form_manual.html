@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.initial.code %}Edit{% else %}Add{% endif %} Course</title>
+    <link rel="stylesheet" href="{% static 'css/course.css' %}">
+</head>
+<body>
+    <div class="container form-page">
+        <h1>{% if form.initial.code %}Edit{% else %}Add{% endif %} Course</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <p>
+                <label>Course Code:</label>
+                {{ form.code }}
+            </p>
+            <p>
+                <label>Course Name:</label>
+                {{ form.name }}
+            </p>
+            <div class="buttons">
+                <button type="submit" class="btn save">Save</button>
+                <a href="{% url 'course_list' %}" class="btn cancel">Cancel</a>
+                <a href="/" class="btn home">🏠 Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

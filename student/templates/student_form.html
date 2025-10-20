@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Student</title>
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+</head>
+<body>
+    <div class="container form-page">
+        <h1>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Student</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="{{ form.name.id_for_label }}">Name</label>
+            {{ form.name }}
+
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+
+            <label for="{{ form.age.id_for_label }}">Age</label>
+            {{ form.age }}
+
+            <label for="{{ form.date_of_birth.id_for_label }}">Date of Birth</label>
+            {{ form.date_of_birth }}
+
+            <label for="{{ form.image.id_for_label }}">Image</label>
+            {{ form.image }}
+
+            <label>Courses</label>
+            <ul>
+                {% for course in form.courses %}
+                <li>
+                    {{ course.tag }} {{ course.choice_label }}
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="buttons">
+                <button type="submit" class="save">Save</button>
+                <a href="{% url 'student_list' %}" class="cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

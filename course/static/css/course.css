@@ -1,0 +1,211 @@
+:root {
+  --primary: #009688;
+  --primary-dark: #00695c;
+  --background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  --text-dark: #263238;
+  --text-light: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --delete: #ef5350;
+  --delete-dark: #c62828;
+  --cancel: #9ca3af;
+  --cancel-dark: #6b7280;
+  --add: #43a047;
+  --add-dark: #2e7d32;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--background);
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+a{
+  text-decoration: none;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+
+.btn {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-light);
+  background: var(--primary);
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.btn.add {
+  background: var(--add);
+}
+.btn.add:hover {
+  background: var(--add-dark);
+}
+
+.btn.edit {
+  background: var(--primary);
+}
+.btn.edit:hover {
+  background: var(--primary-dark);
+}
+
+.btn.delete {
+  background: var(--delete);
+}
+.btn.delete:hover {
+  background: var(--delete-dark);
+}
+
+.btn.cancel {
+  background: var(--cancel);
+  color: var(--text-light);
+}
+.btn.cancel:hover {
+  background: var(--cancel-dark);
+}
+
+.btn.save {
+  background: var(--add);
+}
+.btn.save:hover {
+  background: var(--add-dark);
+}
+
+.btn.home {
+  background: var(--primary);
+}
+.btn.home:hover {
+  background: var(--primary-dark);
+}
+
+/* Card container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Course card */
+.card {
+  background: var(--card-bg);
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 16px 16px 0 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Card content */
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.card p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Action buttons inside cards */
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Form page */
+.form-page {
+  background: var(--card-bg);
+  padding: 40px 50px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: left;
+}
+
+.form-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-page label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-page input,
+.form-page select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}

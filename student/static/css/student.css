@@ -1,0 +1,258 @@
+:root {
+  --primary: #009688;
+  --primary-dark: #00695c;
+  --background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  --text-dark: #263238;
+  --text-light: #fafafa;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --badge-bg: #e0f2f1;
+  --badge-text: #00695c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--background);
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--primary-dark);
+}
+
+/* Top actions buttons */
+.top-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.top-actions .btn {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-light);
+  background: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.top-actions .btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* Card layout */
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 30px 20px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  width: 280px;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 18px 18px 0 0;
+  background: var(--primary);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-dark);
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+/* Courses badges container */
+.card .course-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+/* Individual badges */
+.card .course-badges span {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+/* Card action buttons */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.actions .btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-light);
+  background: var(--primary);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.actions .btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.actions .btn.delete {
+  background: #e53935;
+}
+
+.actions .btn.delete:hover {
+  background: #b71c1c;
+}
+
+/* Form Page */
+.form-page {
+  background: var(--card-bg);
+  padding: 30px 40px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.form-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-page label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Input fields & selects */
+.form-page input, 
+.form-page select, 
+.form-page textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 15px;
+}
+
+/* Multi-checkbox for courses */
+.form-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-page ul li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-page ul li input[type="checkbox"] {
+    accent-color: var(--primary);
+}
+
+/* Form buttons */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.buttons .save {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--primary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buttons .save:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.buttons .cancel {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.buttons .cancel:hover {
+  background: #6b7280;
+  transform: scale(1.05);
+}
